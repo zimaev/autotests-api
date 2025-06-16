@@ -1,1 +1,1 @@
-print("Hello API")
+print("Hello autotests API")
