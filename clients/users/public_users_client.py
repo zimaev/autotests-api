@@ -18,7 +18,7 @@ class PublicUsersClient(APIClient):
     Клиент для работы с /api/v1/users
     """
 
-    def create_user_api(self, request: CreateUserRequestDoct) -> Response:
+    def create_user_api(self, request: CreateUserRequestDict) -> Response:
         """
         Метод создает пользователя
         :param request: Словарь с email, password, lastName, firstName, middleName
