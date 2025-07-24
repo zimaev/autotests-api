@@ -5,7 +5,7 @@ from httpx import Response
 from clients.api_client import APIClient
 
 
-class CreateUserRequestDoct(TypedDict):
+class CreateUserRequestDict(TypedDict):
     email: str
     password: str
     lastName: str
