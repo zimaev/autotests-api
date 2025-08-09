@@ -7,6 +7,9 @@ from clients.private_http_builder import get_private_http_client, Authentication
 
 
 class User(TypedDict):
+    """
+    Описание пользователя.
+    """
     id: str
     email: str
     lastName: str
@@ -15,6 +18,9 @@ class User(TypedDict):
 
 
 class GetUserResponseDict(TypedDict):
+    """
+    Описание структуры ответа на получение пользователя.
+    """
     user: User
 
 
@@ -75,4 +81,9 @@ class PrivateUsersClient(APIClient):
 
 
 def get_private_users_client(users: AuthenticationUserDict) -> PrivateUsersClient:
+    """
+    Функция создаёт экземпляр PrivateUsersClient с уже настроенным HTTP-клиентом.
+
+    :return: Готовый к использованию PrivateUsersClient.
+    """
     return PrivateUsersClient(client=get_private_http_client(users))

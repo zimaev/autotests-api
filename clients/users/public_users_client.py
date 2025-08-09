@@ -15,6 +15,9 @@ class User(TypedDict):
 
 
 class CreateUserRequestDict(TypedDict):
+    """
+    Описание структуры запроса на создание пользователя.
+    """
     email: str
     password: str
     lastName: str
@@ -45,4 +48,9 @@ class PublicUsersClient(APIClient):
 
 
 def get_public_users_client() -> PublicUsersClient:
+    """
+    Функция создаёт экземпляр PublicUsersClient с уже настроенным HTTP-клиентом.
+
+    :return: Готовый к использованию PublicUsersClient.
+    """
     return PublicUsersClient(get_public_http_client())

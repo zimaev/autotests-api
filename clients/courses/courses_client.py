@@ -27,6 +27,9 @@ class CreateCourseRequestDict(TypedDict):
 
 
 class Course(TypedDict):
+    """
+    Описание структуры ответа на получение курса.
+    """
     id: str
     title: str
     maxScore: int
@@ -38,6 +41,9 @@ class Course(TypedDict):
 
 
 class CreateCourseResponseDict(TypedDict):
+    """
+    Описание структуры ответа на создание курса.
+    """
     course: Course
 
 
@@ -110,4 +116,9 @@ class CoursesClient(APIClient):
 
 
 def get_courses_client(user: AuthenticationUserDict) -> CoursesClient:
+    """
+    Функция создаёт экземпляр CoursesClient с уже настроенным HTTP-клиентом.
+
+    :return: Готовый к использованию CoursesClient.
+    """
     return CoursesClient(get_private_http_client(user))

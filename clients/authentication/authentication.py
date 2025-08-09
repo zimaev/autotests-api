@@ -6,6 +6,9 @@ from clients.public_http_builder import get_public_http_client
 
 
 class Token(TypedDict):
+    """
+    Описание структуры аутентификационных токенов.
+    """
     tokenType: str
     accessToken: str
     refreshToken: str
@@ -20,6 +23,9 @@ class LoginRequestDict(TypedDict):
 
 
 class LoginResponseDict(TypedDict):
+    """
+    Описание структуры ответа на аутентификацию.
+    """
     token: Token
 
 
@@ -59,4 +65,9 @@ class AuthenticationClient(APIClient):
 
 
 def get_authentication_client() -> AuthenticationClient:
+    """
+    Функция создаёт экземпляр AuthenticationClient с уже настроенным HTTP-клиентом.
+
+    :return: Готовый к использованию AuthenticationClient.
+    """
     return AuthenticationClient(get_public_http_client())
